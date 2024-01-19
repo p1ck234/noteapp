@@ -68,7 +68,9 @@ const initDeleteButton = () => {
   const deleteButtons = document.querySelectorAll(".delete-button");
   deleteButtons.forEach((button) => {
     button.addEventListener("click", () => {
-      // Handle delete logic
+      const index = button.dataset.index;
+      notes.splice(index, 1);
+      renderNotes();
     });
   });
 };
@@ -76,9 +78,7 @@ const initDeleteButton = () => {
 const initEditButton = () => {
   const editButtons = document.querySelectorAll(".edit-button");
   editButtons.forEach((button) => {
-    button.addEventListener("click", () => {
-      // Handle edit logic
-    });
+    button.addEventListener("click", () => {});
   });
 };
 
@@ -90,10 +90,10 @@ const renderNotes = () => {
         ${note.title}
       </p>
       <div>
-        <button class="delete-button note__button">
+        <button data-index="${index}" class="delete-button note__button">
           <i class="fa-solid fa-trash"></i>
         </button>
-        <button class="edit-button note__button">
+        <button data-index="${index}" class="edit-button note__button">
           <i class="fa-solid fa-pen-to-square"></i>
         </button>
       </div>
@@ -108,5 +108,5 @@ const renderNotes = () => {
   initEditButton();
 };
 
-initAddButton(); 
-renderNotes(); 
+initAddButton();
+renderNotes();
