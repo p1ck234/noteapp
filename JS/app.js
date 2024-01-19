@@ -52,6 +52,9 @@ const boxElement = document.querySelector(".box");
 console.log(headerDateElement.value);
 headerDateElement[0].textContent = formatDate(date);
 
+const inputTitleElement = document.querySelector("#input-title");
+const inputTextElement = document.querySelector("#input-text");
+
 const initAddButton = () => {
   const addButton = document.querySelector(".header__button");
   addButton.addEventListener("click", () => {
@@ -77,8 +80,23 @@ const initDeleteButton = () => {
 
 const initEditButton = () => {
   const editButtons = document.querySelectorAll(".edit-button");
+  const noteTitle = document.querySelector(".note__title");
+  const noteText = document.querySelector(".note__text");
+  const inputTitle = document.querySelector("#input-title");
+  const inputText = document.querySelector("#input-text");
   editButtons.forEach((button) => {
-    button.addEventListener("click", () => {});
+    button.addEventListener("click", () => {
+      noteTitle.classList.toggle("hidden");
+      noteText.classList.toggle("hidden");
+      inputTitle.classList.toggle("hidden");
+      inputText.classList.toggle("hidden");
+      inputTitle.addEventListener("input", (e) => {
+        noteTitle.innerHTML = e.target.value;
+      });
+      inputText.addEventListener("input", (e) => {
+        noteText.innerHTML = e.target.value;
+      });
+    });
   });
 };
 
@@ -89,6 +107,7 @@ const renderNotes = () => {
       <p class="note__title">
         ${note.title}
       </p>
+      <textarea id="input-title" class="hidden"> ${note.title}</textarea>
       <div>
         <button data-index="${index}" class="delete-button note__button">
           <i class="fa-solid fa-trash"></i>
@@ -100,7 +119,9 @@ const renderNotes = () => {
     </div>
     <p class="note__text">
       ${note.text}
-    </p></article>`;
+    </p>
+    <textarea id="input-text" class="hidden">${note.text}</textarea>
+    </article>`;
     })
     .join("");
   boxElement.innerHTML = notesHTML;

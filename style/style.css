@@ -104,6 +104,12 @@ body {
 .box {
   display: flex;
   gap: 32px;
+  flex-wrap: wrap;
+  row-gap: 0px;
+}
+
+.hidden {
+  display: none;
 }
 
 .note {
