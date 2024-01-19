@@ -52,9 +52,6 @@ const boxElement = document.querySelector(".box");
 console.log(headerDateElement.value);
 headerDateElement[0].textContent = formatDate(date);
 
-const inputTitleElement = document.querySelector("#input-title");
-const inputTextElement = document.querySelector("#input-text");
-
 const initAddButton = () => {
   const addButton = document.querySelector(".header__button");
   addButton.addEventListener("click", () => {
@@ -80,21 +77,24 @@ const initDeleteButton = () => {
 
 const initEditButton = () => {
   const editButtons = document.querySelectorAll(".edit-button");
-  const noteTitle = document.querySelector(".note__title");
-  const noteText = document.querySelector(".note__text");
-  const inputTitle = document.querySelector("#input-title");
-  const inputText = document.querySelector("#input-text");
-  editButtons.forEach((button) => {
+  const noteTitleElements = document.querySelectorAll(".note__title");
+  const noteTextElements = document.querySelectorAll(".note__text");
+  const inputTitleElements = document.querySelectorAll(".input-title");
+  const inputTextElements = document.querySelectorAll(".input-text");
+
+  editButtons.forEach((button, index) => {
     button.addEventListener("click", () => {
-      noteTitle.classList.toggle("hidden");
-      noteText.classList.toggle("hidden");
-      inputTitle.classList.toggle("hidden");
-      inputText.classList.toggle("hidden");
-      inputTitle.addEventListener("input", (e) => {
-        noteTitle.innerHTML = e.target.value;
+      noteTitleElements[index].classList.toggle("hidden");
+      noteTextElements[index].classList.toggle("hidden");
+      inputTitleElements[index].classList.toggle("hidden");
+      inputTextElements[index].classList.toggle("hidden");
+
+      inputTitleElements[index].addEventListener("input", (e) => {
+        noteTitleElements[index].innerHTML = e.target.value;
       });
-      inputText.addEventListener("input", (e) => {
-        noteText.innerHTML = e.target.value;
+
+      inputTextElements[index].addEventListener("input", (e) => {
+        noteTextElements[index].innerHTML = e.target.value;
       });
     });
   });
@@ -107,7 +107,7 @@ const renderNotes = () => {
       <p class="note__title">
         ${note.title}
       </p>
-      <textarea id="input-title" class="hidden"> ${note.title}</textarea>
+      <textarea class="hidden input-title">${note.title}</textarea>
       <div>
         <button data-index="${index}" class="delete-button note__button">
           <i class="fa-solid fa-trash"></i>
@@ -120,7 +120,7 @@ const renderNotes = () => {
     <p class="note__text">
       ${note.text}
     </p>
-    <textarea id="input-text" class="hidden">${note.text}</textarea>
+    <textarea class="hidden input-text">${note.text}</textarea>
     </article>`;
     })
     .join("");
