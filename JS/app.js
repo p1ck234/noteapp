@@ -52,6 +52,16 @@ const boxElement = document.querySelector(".box");
 console.log(headerDateElement.value);
 headerDateElement[0].textContent = formatDate(date);
 
+const initDeleteButton = () => {
+  const deleteButton = document.querySelector("#delete-button");
+  deleteButton.addEventListener("click", () => {});
+};
+
+const initEditButton = () => {
+  const editButton = document.querySelector("#edit-button");
+  editButton.addEventListener("click", () => {});
+};
+
 const renderNotes = () => {
   const notesHTML = notes
     .map((note, index) => {
@@ -60,10 +70,10 @@ const renderNotes = () => {
         ${note.title}
       </p>
       <div>
-        <button class="note__button">
+        <button id="delete-button" class="note__button">
           <i class="fa-solid fa-trash"></i>
         </button>
-        <button class="note__button">
+        <button id="edit-button" class="note__button">
           <i class="fa-solid fa-pen-to-square"></i>
         </button>
       </div>
@@ -75,5 +85,4 @@ const renderNotes = () => {
     .join("");
   boxElement.innerHTML = notesHTML;
 };
-
 renderNotes();
