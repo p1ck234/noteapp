@@ -52,14 +52,34 @@ const boxElement = document.querySelector(".box");
 console.log(headerDateElement.value);
 headerDateElement[0].textContent = formatDate(date);
 
+const initAddButton = () => {
+  const addButton = document.querySelector(".header__button");
+  addButton.addEventListener("click", () => {
+    notes.push({
+      id: 1,
+      title: "Название",
+      text: "Текст заметки",
+    });
+    renderNotes();
+  });
+};
+
 const initDeleteButton = () => {
-  const deleteButton = document.querySelector("#delete-button");
-  deleteButton.addEventListener("click", () => {});
+  const deleteButtons = document.querySelectorAll(".delete-button");
+  deleteButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      // Handle delete logic
+    });
+  });
 };
 
 const initEditButton = () => {
-  const editButton = document.querySelector("#edit-button");
-  editButton.addEventListener("click", () => {});
+  const editButtons = document.querySelectorAll(".edit-button");
+  editButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      // Handle edit logic
+    });
+  });
 };
 
 const renderNotes = () => {
@@ -70,10 +90,10 @@ const renderNotes = () => {
         ${note.title}
       </p>
       <div>
-        <button id="delete-button" class="note__button">
+        <button class="delete-button note__button">
           <i class="fa-solid fa-trash"></i>
         </button>
-        <button id="edit-button" class="note__button">
+        <button class="edit-button note__button">
           <i class="fa-solid fa-pen-to-square"></i>
         </button>
       </div>
@@ -84,5 +104,9 @@ const renderNotes = () => {
     })
     .join("");
   boxElement.innerHTML = notesHTML;
+  initDeleteButton();
+  initEditButton();
 };
-renderNotes();
+
+initAddButton(); 
+renderNotes(); 
