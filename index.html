@@ -34,10 +34,20 @@
       <p class="header_date">Дата</p>
     </header>
     <main class="main center">
-      <input class="main__input" type="text" placeholder="Логин" />
-      <input class="main__input" type="password" placeholder="Пароль" />
-      <button class="main__button">Войти</button>
+      <input
+        id="inputLogin"
+        class="main__input"
+        type="text"
+        placeholder="Логин"
+      />
+      <input
+        id="inputPassword"
+        class="main__input"
+        type="password"
+        placeholder="Пароль"
+      />
+      <button class="main__button" onClick="authAccount()">Войти</button>
     </main>
-    <script src="JS/auth.js"></script>
+    <script src="JS/app.js"></script>
   </body>
 </html>
