@@ -19,4 +19,10 @@
 .header__img {
   height: 100px;
   width: 100px;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
 }/*# sourceMappingURL=style.css.map */
