@@ -1,10 +1,3 @@
-let accounts = [
-  {
-    login: "p1ck23",
-    password: "123",
-  },
-];
-
 const authAccount = () => {
   const inputElementLogin = document.getElementById("inputLogin");
   const inputElementPassword = document.getElementById("inputPassword");
@@ -34,6 +27,12 @@ function formatDate(date) {
   return formattedDate;
 }
 
+let accounts = [
+  {
+    login: "p1ck23",
+    password: "123",
+  },
+];
 const headerDateElement = document.getElementsByClassName("header_date");
 const date = new Date();
 console.log(headerDateElement.value);
