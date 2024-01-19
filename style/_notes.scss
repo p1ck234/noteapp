@@ -1,0 +1,39 @@
+.box {
+  display: flex;
+  gap: 32px;
+}
+
+.note {
+  margin-top: 32px;
+  padding: 32px;
+  background-color: #d2faca;
+  width: 500px;
+  min-height: 300px;
+  &__box {
+    display: flex;
+    justify-content: space-between;
+  }
+  &__title {
+    font-weight: bold;
+    margin-bottom: 18px;
+  }
+  &__button {
+    width: 30px;
+    height: 30px;
+    border: 1px solid #c4c4c4;
+    font-family: Montserrat;
+    border-radius: 3px;
+    font-size: 18px;
+    font-weight: 400;
+    color: #000000;
+    fill: rgba(222, 215, 215, 0.41);
+    transition: background 0.5s;
+    margin-bottom: 5px;
+    &:hover {
+      background: #000;
+      stroke-width: 1px;
+      color: #fff;
+      cursor: pointer;
+    }
+  }
+}

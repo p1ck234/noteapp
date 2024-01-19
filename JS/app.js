@@ -29,8 +29,16 @@ function formatDate(date) {
 
 let accounts = [
   {
+    id: 1,
     login: "p1ck23",
     password: "123",
+  },
+];
+let notes = [
+  {
+    id: 1,
+    title: "Первая заметка",
+    text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit temporabeatae temporibus, similique obcaecati debitis? Quos vel accusamus",
   },
 ];
 const headerDateElement = document.getElementsByClassName("header_date");
