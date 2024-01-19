@@ -40,8 +40,40 @@ let notes = [
     title: "Первая заметка",
     text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit temporabeatae temporibus, similique obcaecati debitis? Quos vel accusamus",
   },
+  {
+    id: 1,
+    title: "Вторая заметка",
+    text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit temporabeatae temporibus, similique obcaecati debitis? Quos vel accusamus",
+  },
 ];
 const headerDateElement = document.getElementsByClassName("header_date");
 const date = new Date();
+const boxElement = document.querySelector(".box");
 console.log(headerDateElement.value);
 headerDateElement[0].textContent = formatDate(date);
+
+const renderNotes = () => {
+  const notesHTML = notes
+    .map((note, index) => {
+      return `<article class="note"><div class="note__box">
+      <p class="note__title">
+        ${note.title}
+      </p>
+      <div>
+        <button class="note__button">
+          <i class="fa-solid fa-trash"></i>
+        </button>
+        <button class="note__button">
+          <i class="fa-solid fa-pen-to-square"></i>
+        </button>
+      </div>
+    </div>
+    <p class="note__text">
+      ${note.text}
+    </p></article>`;
+    })
+    .join("");
+  boxElement.innerHTML = notesHTML;
+};
+
+renderNotes();
