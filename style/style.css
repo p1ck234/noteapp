@@ -25,4 +25,18 @@
   display: flex;
   flex-direction: column;
   gap: 32px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-content: space-between;
+}
+
+.footer {
+  display: flex;
+  background-color: #d2faca;
+  align-items: center;
+  justify-content: center;
+  height: 100px;
 }/*# sourceMappingURL=style.css.map */
