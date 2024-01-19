@@ -10,20 +10,28 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <link rel="stylesheet" href="style/style.css" />
     <title>Авторизация</title>
   </head>
   <body>
-    <header class="header">
-      <img src="img/notes.png" alt="" class="header__logo" />
+    <header class="header center">
+      <a href="#"
+        ><img
+          class="header__img"
+          src="img/notes.png"
+          alt=""
+          class="header__logo"
+      /></a>
       <h1 class="header__title">Заметки</h1>
+      <p class="header_date">Дата</p>
     </header>
     <main class="main">
-        <input type="text">
-        <input type="password">
-        <button>Войти</button>
+      <input type="text" />
+      <input type="password" />
+      <button>Войти</button>
     </main>
     <footer>
-        <p>Все права защищены.</p>
+      <p>Все права защищены.</p>
     </footer>
     <script src="JS/auth.js"></script>
   </body>

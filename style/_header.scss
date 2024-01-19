@@ -1,0 +1,11 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #d2faca;
+  border-bottom: 0.5px solid black;
+  &__img {
+    height: 100px;
+    width: 100px;
+  }
+}

@@ -1,0 +1,22 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.center {
+  padding-left: calc(50% - 800px);
+  padding-right: calc(50% - 800px);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #d2faca;
+  border-bottom: 0.5px solid black;
+}
+.header__img {
+  height: 100px;
+  width: 100px;
+}/*# sourceMappingURL=style.css.map */
