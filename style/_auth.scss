@@ -14,16 +14,17 @@
     padding-left: 25px;
     color: #000000;
     transition: 0.5s border-color;
+    &:hover {
+      border-color: #000;
+    }
+    &::placeholder {
+      font-family: Montserrat;
+      color: #c4c4c4;
+      font-size: 16px;
+      font-weight: 400;
+    }
   }
-  &__input:hover {
-    border-color: #000;
-  }
-  &__input::placeholder {
-    font-family: Montserrat;
-    color: #c4c4c4;
-    font-size: 16px;
-    font-weight: 400;
-  }
+
   &__button {
     border: 1px solid #c4c4c4;
     font-family: Montserrat;
@@ -35,11 +36,11 @@
     color: #000000;
     fill: rgba(222, 215, 215, 0.41);
     transition: background 0.5s;
-  }
-  &__button:hover {
-    background: #000;
-    stroke-width: 1px;
-    color: #fff;
-    cursor: pointer;
+    &:hover {
+      background: #000;
+      stroke-width: 1px;
+      color: #fff;
+      cursor: pointer;
+    }
   }
 }
